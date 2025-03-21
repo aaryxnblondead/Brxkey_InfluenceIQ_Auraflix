@@ -15,6 +15,19 @@ const theme = createTheme({
       main: '#FF6B6B',
     },
   },
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: {
+          '&::-webkit-scrollbar': {
+            display: 'none',
+          },
+          '-ms-overflow-style': 'none',
+          'scrollbar-width': 'none',
+        },
+      },
+    },
+  },
 });
 
 function App() {

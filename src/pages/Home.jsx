@@ -10,10 +10,12 @@ import {
 import LeaderboardSection from '../components/home/LeaderboardSection';
 import TrendingFigures from '../components/home/TrendingFigures';
 import FeaturedProfiles from '../components/home/FeaturedProfiles';
+import TitleCard from '../components/home/TitleCard';
 
 function Home() {
   return (
     <Container maxWidth="lg">
+      <TitleCard />
       <Box sx={{ my: 4 }}>
         <TextField
           fullWidth
