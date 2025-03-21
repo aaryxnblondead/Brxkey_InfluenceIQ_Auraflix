@@ -4,7 +4,8 @@ function TitleCard() {
   return (
     <Box
       sx={{
-        height: '60vh',
+        height: '100vh',
+        width: '100%',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',

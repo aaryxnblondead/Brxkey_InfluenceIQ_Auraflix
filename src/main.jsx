@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 
-document.documentElement.style.overflow = 'hidden'
+document.documentElement.style.scrollbarWidth = 'none'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

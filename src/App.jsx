@@ -15,16 +15,71 @@ const theme = createTheme({
       main: '#FF6B6B',
     },
   },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1200,
+      xl: 1536,
+    },
+  },
   components: {
     MuiCssBaseline: {
       styleOverrides: {
         body: {
+          overflow: 'auto',
           '&::-webkit-scrollbar': {
-            display: 'none',
+            width: 'none',
+            background: 'transparent',
           },
           '-ms-overflow-style': 'none',
           'scrollbar-width': 'none',
         },
+      },
+    },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          padding: 0,
+        },
+      },
+    },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          padding: 0,
+        },
+      },
+    },
+    MuiCardContent: {
+      styleOverrides: {
+        root: {
+          padding: 0,
+          '&:last-child': {
+            paddingBottom: 0,
+          },
+        },
+      },
+    },
+  },
+  typography: {
+    h1: {
+      fontSize: '2.5rem',
+      '@media (min-width:600px)': {
+        fontSize: '3.5rem',
+      },
+    },
+    h2: {
+      fontSize: '2rem',
+      '@media (min-width:600px)': {
+        fontSize: '3rem',
+      },
+    },
+    body1: {
+      fontSize: '1rem',
+      '@media (min-width:600px)': {
+        fontSize: '1.1rem',
       },
     },
   },

@@ -7,16 +7,37 @@ import {
   TextField,
   Box 
 } from '@mui/material';
+import TitleCard from '../components/home/TitleCard';
 import LeaderboardSection from '../components/home/LeaderboardSection';
 import TrendingFigures from '../components/home/TrendingFigures';
 import FeaturedProfiles from '../components/home/FeaturedProfiles';
-import TitleCard from '../components/home/TitleCard';
+
 
 function Home() {
   return (
     <Container maxWidth="lg">
-      <TitleCard />
-      <Box sx={{ my: 4 }}>
+      <Box 
+        sx={{ 
+          height: '100vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }}
+      >
+        <TitleCard />
+      </Box>
+      <Box 
+        sx={{ 
+          my: 4, 
+          height: 'calc(100vh - 100px)', 
+          overflow: 'auto',
+          '&::-webkit-scrollbar': {
+            display: 'none'
+          },
+          msOverflowStyle: 'none',
+          scrollbarWidth: 'none'
+        }}
+      >
         <TextField
           fullWidth
           variant="outlined"
