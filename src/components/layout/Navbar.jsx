@@ -13,7 +13,7 @@ import {
   useMediaQuery
 } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import { Menu as MenuIcon } from '@mui/icons-material';
+import { Menu as MenuIcon, Search as SearchIcon } from '@mui/icons-material';
 
 function Navbar() {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -40,14 +40,14 @@ function Navbar() {
       <Toolbar>
         <Typography
           variant="h6"
-          sx={{ cursor: 'pointer', flexGrow: 1 }}
+          sx={{ cursor: 'pointer' }}
           onClick={() => navigate('/')}
         >
           InfluenceIQ
         </Typography>
 
         {!isMobile && (
-          <Box sx={{ display: 'flex', gap: 2 }}>
+          <Box sx={{ display: 'flex', gap: 2, mx: 4, flexGrow: 1 }}>
             {menuItems.map((item) => (
               <Button
                 key={item.label}
@@ -61,9 +61,14 @@ function Navbar() {
         )}
 
         <IconButton
-          onClick={handleProfileClick}
-          sx={{ ml: 2 }}
+          color="inherit"
+          onClick={() => navigate('/search')}
+          sx={{ mr: 2 }}
         >
+          <SearchIcon />
+        </IconButton>
+
+        <IconButton onClick={handleProfileClick}>
           <Avatar sx={{ width: 32, height: 32 }} />
         </IconButton>
 
