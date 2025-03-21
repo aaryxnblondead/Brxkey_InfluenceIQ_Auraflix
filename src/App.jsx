@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ThemeProvider, createTheme } from '@mui/material';
+import { ThemeProvider, createTheme, CssBaseline, Box } from '@mui/material';
 import Navbar from './components/layout/Navbar';
 import Home from './pages/Home';
 import Profile from './pages/Profile';
@@ -35,6 +35,10 @@ const theme = createTheme({
           },
           '-ms-overflow-style': 'none',
           'scrollbar-width': 'none',
+          margin: 0,
+          padding: 0,
+          minHeight: '100vh',
+          width: '100vw',
         },
       },
     },
@@ -88,15 +92,20 @@ const theme = createTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/onboarding" element={<Onboarding />} />
-          <Route path="/profile/:id" element={<Profile />} />
-          <Route path="/search" element={<Search />} />
-        </Routes>
-      </Router>
+      <CssBaseline />
+      <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', width: '100vw' }}>
+        <Router>
+          <Navbar />
+          <Box component="main" sx={{ flexGrow: 1 }}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/onboarding" element={<Onboarding />} />
+              <Route path="/profile/:id" element={<Profile />} />
+              <Route path="/search" element={<Search />} />
+            </Routes>
+          </Box>
+        </Router>
+      </Box>
     </ThemeProvider>
   );
 }
